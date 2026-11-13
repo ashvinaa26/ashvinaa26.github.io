@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111F">
 <title>The Big Mac index | Ashvinaa Ramarau</title>
 <meta name="description" content="An interactive Big Mac index chart, 2000 to 2026: which currencies look over- or undervalued, raw and GDP-adjusted. Built in Python and Plotly by Ashvinaa Ramarau.">
 <link rel="canonical" href="https://ashvinaa26.github.io/projects/big-mac-index.html">
@@ -15,27 +16,27 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="topbar" aria-label="Main menu">
   <div class="wrap">
-    <a class="brand" href="../index.html"><span class="mono" aria-hidden="true">AR</span>Ashvinaa Ramarau</a>
+    <a class="brand" href="../index.html">Ashvinaa Ramarau</a>
     <ul>
-      <li><a href="../index.html#projects" aria-current="page">Projects</a></li>
+      <li><a href="../index.html#work" aria-current="page">Work</a></li>
       <li><a href="../index.html#about">About</a></li>
       <li><a href="../index.html#cv">CV</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="case-hero">
   <div class="wrap">
-    <a class="back" href="../index.html#projects">All projects</a>
-    <p class="eyebrow">Project &middot; Interactive chart</p>
+    <a class="back" href="../index.html#work">All work</a>
+    <p class="eyebrow">Case study &middot; Interactive chart</p>
     <h1>The Big Mac index: which currencies look over- or undervalued?</h1>
     <p class="lead">A Big Mac is almost the same everywhere, so its price should buy about the same in every country. Comparing the prices shows which currencies look too strong or too weak, at market exchange rates and after allowing for income.</p>
     <ul class="meta">
@@ -58,7 +59,7 @@
       <h2 id="notice-h">What to notice</h2>
       <p>In July 2026 a Big Mac in <b>Switzerland</b> costs 45% more than in America, and in <b>Indonesia</b> 62% less. Adjusting for income (GDP per person) barely changes the typical gap: <b>27% raw, 25% adjusted</b>.</p>
 
-      <h2 style="margin-top:36px">How to use it</h2>
+      <h2>How to use it</h2>
       <ul>
         <li><b>Compare with</b> switches the base currency (US dollar, euro, British pound, Japanese yen, Chinese yuan).</li>
         <li><b>Show</b> switches between raw, GDP-adjusted, or both.</li>
@@ -68,7 +69,7 @@
 
       <div class="callout"><b>New in my version:</b> once a country is pinned, add a second one (the box marked NEW in the panel, or Shift+click a row). Both histories are drawn together, so you can see how two currencies have moved against each other over 26 years, which the original only shows one at a time.</div>
 
-      <h2 style="margin-top:36px">How I checked it</h2>
+      <h2>How I checked it</h2>
       <p>I picked values on the chart and looked up the same rows in the data file (date 2026-07-01, US dollar):</p>
       <table class="checks">
         <thead><tr><th>Country</th><th>In the data</th><th>On the chart</th></tr></thead>
@@ -79,11 +80,11 @@
         </tbody>
       </table>
 
-      <h2 style="margin-top:36px">Credits</h2>
+      <h2>Credits</h2>
       <p class="credit">Data: The Economist, Big Mac index (MIT licence; notice in LICENCE_bigmac_TheEconomist.txt), <a href="https://github.com/TheEconomist/big-mac-data">github.com/TheEconomist/big-mac-data</a>.</p>
       <p class="copylabel">A copy of the MSIN0167 course target chart, built as a class exercise with AI help. Target A is inspired by The Economist&rsquo;s Big Mac index and is not a chart by The Economist. Data: The Economist, Big Mac index, MIT licence, <a href="https://github.com/TheEconomist/big-mac-data">github.com/TheEconomist/big-mac-data</a>.</p>
       <p class="credit">AI used: Claude (Claude Code) wrote the code with me; I checked the values against the data.</p>
-      <p style="margin-top:28px"><a class="back" href="city-temperature.html" style="margin:0">Next project: Is your city getting warmer?</a></p>
+      <nav class="next" aria-label="More projects"><a href="../index.html#work"><small>Back to</small>All work</a><a href="city-temperature.html" style="text-align:right"><small>Next project</small>Is your city getting warmer? &rarr;</a></nav>
     </div>
   </section>
 </main>
@@ -94,13 +95,6 @@
     <p>Built with the help of generative AI; content and decisions are my own.</p>
   </div>
 </footer>
-<script>
-  /* make the chart frame exactly as tall as the chart inside it */
-  (function(){
-    var f = document.querySelector('.chart-frame'); if (!f) return;
-    function fit(){ try { var h = f.contentDocument.body.scrollHeight; if (h > 300) f.style.height = (h + 4) + 'px'; } catch (e) {} }
-    f.addEventListener('load', function(){ fit(); try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) {} });
-  })();
-</script>
+<script src="../assets/site.js"></script>
 </body>
 </html>

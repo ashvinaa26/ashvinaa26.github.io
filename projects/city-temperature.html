@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111F">
 <title>Is your city getting warmer? | Ashvinaa Ramarau</title>
 <meta name="description" content="An interactive chart of how much warmer 40 cities have been than their own 1961 to 1990 average, 1950 to 2025. Built in Python and Plotly by Ashvinaa Ramarau.">
 <link rel="canonical" href="https://ashvinaa26.github.io/projects/city-temperature.html">
@@ -15,27 +16,27 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="topbar" aria-label="Main menu">
   <div class="wrap">
-    <a class="brand" href="../index.html"><span class="mono" aria-hidden="true">AR</span>Ashvinaa Ramarau</a>
+    <a class="brand" href="../index.html">Ashvinaa Ramarau</a>
     <ul>
-      <li><a href="../index.html#projects" aria-current="page">Projects</a></li>
+      <li><a href="../index.html#work" aria-current="page">Work</a></li>
       <li><a href="../index.html#about">About</a></li>
       <li><a href="../index.html#cv">CV</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="case-hero">
   <div class="wrap">
-    <a class="back" href="../index.html#projects">All projects</a>
-    <p class="eyebrow">Project &middot; Interactive chart</p>
+    <a class="back" href="../index.html#work">All work</a>
+    <p class="eyebrow">Case study &middot; Interactive chart</p>
     <h1>Is your city getting warmer?</h1>
     <p class="lead">Each city is compared only with itself: how much warmer or cooler each year was than that city&rsquo;s own 1961&ndash;1990 average, for 40 cities from 1950 to 2025.</p>
     <ul class="meta">
@@ -58,7 +59,7 @@
       <h2 id="notice-h">What to notice</h2>
       <p>Over the last ten years (2016&ndash;2025) <b>London</b> was 1.6&nbsp;&deg;C warmer than its own 1961&ndash;1990 average and <b>Sydney</b> 1.0&nbsp;&deg;C warmer. In 2025, <b>Moscow</b> was furthest above its own average of the 40 cities, at +3.3&nbsp;&deg;C. Warming is not even: <b>Delhi</b> is only about 0.3&nbsp;&deg;C above its own average over 2016&ndash;2025.</p>
 
-      <h2 style="margin-top:36px">How to use it</h2>
+      <h2>How to use it</h2>
       <ul>
         <li><b>Find a city</b> to add up to four cities, or press one of the suggestions.</li>
         <li><b>Show</b> switches between the whole year, July and January (in the south, July is winter).</li>
@@ -67,7 +68,7 @@
 
       <div class="callout"><b>New in my version:</b> the <b>10-year average</b> switch draws a thick line for each chosen city: the average of the ten years up to each year. Single years jump up and down; the smooth line shows the long-run trend more clearly.</div>
 
-      <h2 style="margin-top:36px">How I checked it</h2>
+      <h2>How I checked it</h2>
       <table class="checks">
         <thead><tr><th>Check</th><th>In the data</th><th>On the chart</th></tr></thead>
         <tbody>
@@ -78,11 +79,11 @@
       </table>
       <p class="credit">The values are model estimates for a 25&nbsp;km square around each city centre, not thermometer readings. The data show how much the cities warmed, not why.</p>
 
-      <h2 style="margin-top:36px">Credits</h2>
+      <h2>Credits</h2>
       <p class="credit">Data: <a href="https://open-meteo.com/">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), ERA5 reanalysis, Copernicus Climate Change Service / ECMWF. Monthly means and differences computed for this class exercise. Not endorsed by Open-Meteo, Copernicus or ECMWF.</p>
       <p class="copylabel">A copy of the MSIN0167 course target chart, built as a class exercise with AI help. Target C is built from Open-Meteo weather data. Data: Open-Meteo.com, CC BY 4.0, <a href="https://open-meteo.com/">open-meteo.com</a>.</p>
       <p class="credit">AI used: Claude (Claude Code) wrote the code with me; I checked the values against the data.</p>
-      <p style="margin-top:28px"><a class="back" href="big-mac-index.html" style="margin:0">Previous project: The Big Mac index</a></p>
+      <nav class="next" aria-label="More projects"><a href="big-mac-index.html"><small>Previous project</small>&larr; The Big Mac index</a><a href="../index.html#work" style="text-align:right"><small>Back to</small>All work</a></nav>
     </div>
   </section>
 </main>
@@ -93,13 +94,6 @@
     <p>Built with the help of generative AI; content and decisions are my own.</p>
   </div>
 </footer>
-<script>
-  /* make the chart frame exactly as tall as the chart inside it */
-  (function(){
-    var f = document.querySelector('.chart-frame'); if (!f) return;
-    function fit(){ try { var h = f.contentDocument.body.scrollHeight; if (h > 300) f.style.height = (h + 4) + 'px'; } catch (e) {} }
-    f.addEventListener('load', function(){ fit(); try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) {} });
-  })();
-</script>
+<script src="../assets/site.js"></script>
 </body>
 </html>
