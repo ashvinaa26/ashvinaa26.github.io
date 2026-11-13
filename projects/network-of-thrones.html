@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111F">
+<title>Who matters in a network? | Ashvinaa Ramarau</title>
+<meta name="description" content="An interactive network analysis of 107 characters in A Storm of Swords: degree, brokerage and eigenvector centrality, with a highlight-a-character view. Built in Python, NetworkX and Plotly by Ashvinaa Ramarau.">
+<link rel="canonical" href="https://ashvinaa26.github.io/projects/network-of-thrones.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Who matters in a network? | Ashvinaa Ramarau">
+<meta property="og:description" content="Network analysis of 107 characters and 352 links: who has the most connections, who bridges groups, and who is linked to the most important characters.">
+<meta property="og:url" content="https://ashvinaa26.github.io/projects/network-of-thrones.html">
+<meta property="og:image" content="https://ashvinaa26.github.io/images/share-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="topbar" aria-label="Main menu">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Ashvinaa Ramarau</a>
+    <ul>
+      <li><a href="../index.html#work" aria-current="page">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#cv">CV</a></li>
+      <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <a class="back" href="../index.html#work">All work</a>
+    <p class="eyebrow">Case study &middot; Network analysis</p>
+    <h1>Who matters in a network?</h1>
+    <p class="lead">107 characters from <i>A Storm of Swords</i>, linked when their names appear within 15 words of each other. Three measures answer three different questions: who has the most connections, who bridges different groups, and who is linked to the characters who matter most.</p>
+    <ul class="meta">
+      <li><b>Data</b>Network of Thrones (Beveridge &amp; Shan, 2016)</li>
+      <li><b>Coverage</b>107 characters, 352 links</li>
+      <li><b>Tools</b>Python, pandas, NetworkX, Plotly</li>
+      <li><b>Context</b>MSIN0167 class exercise, UCL</li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap chart-wrap">
+    <iframe class="chart-frame" style="height:1000px;max-width:1100px" src="../charts/network.html" title="Interactive network of 107 characters with buttons for degree centrality, brokerage and eigenvector centrality, a top 8 bar chart, and a menu to highlight one character's links"></iframe>
+    <p class="chart-links"><a href="../charts/network.html">Open the chart full screen</a></p>
+  </div>
+
+  <section aria-labelledby="notice-h">
+    <div class="wrap prose">
+      <h2 id="notice-h">What to notice</h2>
+      <p><b>The most connected character is not the top broker.</b> Tyrion has the most links (36 of a possible 106), but Jon has the highest brokerage score (0.230): many of the shortest routes between other characters pass through him, because he connects groups that are otherwise far apart. On eigenvector centrality, which rewards links to well-connected characters, Jon is only 15th.</p>
+
+      <h2>How to use it</h2>
+      <ul>
+        <li>The three <b>measure buttons</b> change the dot sizes and colours, the top-8 bars and the title.</li>
+        <li><b>Hover</b> a dot to see a character&rsquo;s links and all three scores with their ranks.</li>
+        <li>Open <b>&ldquo;All values as a table&rdquo;</b> under the chart to read every value without hovering.</li>
+      </ul>
+
+      <div class="callout"><b>New in my version:</b> the <b>Highlight a character</b> menu (top right of the chart) draws one character&rsquo;s links in orange, rings everyone they are linked to and names their strongest link. It shows <i>who</i> a character connects, not just how central they are: Jon, for example, links the Night&rsquo;s Watch, the wildlings and the Starks.</div>
+
+      <h2>How I checked it</h2>
+      <table class="checks">
+        <thead><tr><th>Check</th><th>In the data</th><th>On the chart</th></tr></thead>
+        <tbody>
+          <tr><td>Tyrion</td><td>36 links; degree 0.340, brokerage 0.198, eigenvector 0.337</td><td>Same values; ranks 1, 3 and 1</td></tr>
+          <tr><td>Jon</td><td>26 links; degree 0.245, brokerage 0.230, eigenvector 0.142</td><td>Same values; ranks 2, 1 and 15</td></tr>
+          <tr><td>Highlight: Jon</td><td>26 rows with Jon in the edge file; strongest Jon&ndash;Mance, weight 69</td><td>26 characters ringed; strongest link Mance (69)</td></tr>
+        </tbody>
+      </table>
+      <p class="credit">A link means two names appear close together in the text, not that the characters met or are friends; enemies are linked too, and some characters (Robert, for example) are linked through other people&rsquo;s memories. First names only: &ldquo;Jon&rdquo; is Jon Snow.</p>
+
+      <h2>Credits and licence</h2>
+      <p class="credit">Data: Network of Thrones, Andrew Beveridge and Jie Shan (2016), <i>A Storm of Swords</i>. Source: <a href="https://github.com/mathbeveridge/asoiaf">github.com/mathbeveridge/asoiaf</a>. Data and this adapted visualisation: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Changes: unweighted centralities calculated and network visualised; added a &ldquo;highlight a character&rdquo; menu that draws one character&rsquo;s links and neighbours. Original edge weights unchanged.</p>
+      <p class="copylabel">A copy of the MSIN0167 course target chart, built as a class exercise with AI help, shared for non-commercial purposes.</p>
+      <p class="credit">AI used: Claude (Claude Code) wrote the code with me; I checked the values against the data.</p>
+
+      <nav class="next" aria-label="More projects"><a href="city-temperature.html"><small>Previous project</small>&larr; Is your city getting warmer?</a><a href="../index.html#work" style="text-align:right"><small>Back to</small>All work</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Ashvinaa Ramarau &middot; <a href="https://www.linkedin.com/in/ashvinaa-ramarau/">LinkedIn</a></p>
+    <p>Built with the help of generative AI; content and decisions are my own.</p>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
