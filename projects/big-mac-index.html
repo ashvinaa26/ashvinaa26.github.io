@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Big Mac index | Ashvinaa Ramarau</title>
+<meta name="description" content="An interactive Big Mac index chart, 2000 to 2026: which currencies look over- or undervalued, raw and GDP-adjusted. Built in Python and Plotly by Ashvinaa Ramarau.">
+<link rel="canonical" href="https://ashvinaa26.github.io/projects/big-mac-index.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Big Mac index | Ashvinaa Ramarau">
+<meta property="og:description" content="Which currencies look over- or undervalued against the dollar, 2000 to 2026? An interactive chart built in Python and Plotly.">
+<meta property="og:url" content="https://ashvinaa26.github.io/projects/big-mac-index.html">
+<meta property="og:image" content="https://ashvinaa26.github.io/images/share-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="topbar" aria-label="Main menu">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mono" aria-hidden="true">AR</span>Ashvinaa Ramarau</a>
+    <ul>
+      <li><a href="../index.html#projects" aria-current="page">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#cv">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <a class="back" href="../index.html#projects">All projects</a>
+    <p class="eyebrow">Project &middot; Interactive chart</p>
+    <h1>The Big Mac index: which currencies look over- or undervalued?</h1>
+    <p class="lead">A Big Mac is almost the same everywhere, so its price should buy about the same in every country. Comparing the prices shows which currencies look too strong or too weak, at market exchange rates and after allowing for income.</p>
+    <ul class="meta">
+      <li><b>Data</b>The Economist, Big Mac index</li>
+      <li><b>Coverage</b>45 readings, 2000&ndash;2026</li>
+      <li><b>Tools</b>Python, pandas, Plotly, matplotlib</li>
+      <li><b>Context</b>MSIN0167 class exercise, UCL</li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap chart-wrap">
+    <iframe class="chart-frame" src="../charts/chart1.html" title="Interactive ranked dot chart of the Big Mac index: each country's Big Mac price compared with another currency, raw and GDP-adjusted, from 2000 to 2026"></iframe>
+    <p class="chart-links"><a href="../charts/chart1.html">Open the chart full screen</a><a href="../images/chart1.png">Static picture (PNG)</a></p>
+  </div>
+
+  <section aria-labelledby="notice-h">
+    <div class="wrap prose">
+      <h2 id="notice-h">What to notice</h2>
+      <p>In July 2026 a Big Mac in <b>Switzerland</b> costs 45% more than in America, and in <b>Indonesia</b> 62% less. Adjusting for income (GDP per person) barely changes the typical gap: <b>27% raw, 25% adjusted</b>.</p>
+
+      <h2 style="margin-top:36px">How to use it</h2>
+      <ul>
+        <li><b>Compare with</b> switches the base currency (US dollar, euro, British pound, Japanese yen, Chinese yuan).</li>
+        <li><b>Show</b> switches between raw, GDP-adjusted, or both.</li>
+        <li><b>Play</b> or the slider moves through 45 readings from 2000 to 2026; the rows re-rank as you go.</li>
+        <li><b>Hover</b> a row for its prices and rank; <b>click</b> a row to pin its history.</li>
+      </ul>
+
+      <div class="callout"><b>New in my version:</b> once a country is pinned, add a second one (the box marked NEW in the panel, or Shift+click a row). Both histories are drawn together, so you can see how two currencies have moved against each other over 26 years, which the original only shows one at a time.</div>
+
+      <h2 style="margin-top:36px">How I checked it</h2>
+      <p>I picked values on the chart and looked up the same rows in the data file (date 2026-07-01, US dollar):</p>
+      <table class="checks">
+        <thead><tr><th>Country</th><th>In the data</th><th>On the chart</th></tr></thead>
+        <tbody>
+          <tr><td>Switzerland</td><td>0.45369</td><td>+45%, row 1 of 54</td></tr>
+          <tr><td>Britain</td><td>0.18975</td><td>+19%, row 6 of 54</td></tr>
+          <tr><td>Indonesia</td><td>&minus;0.61732</td><td>&minus;62%, row 54 of 54</td></tr>
+        </tbody>
+      </table>
+
+      <h2 style="margin-top:36px">Credits</h2>
+      <p class="credit">Data: The Economist, Big Mac index (MIT licence; notice in LICENCE_bigmac_TheEconomist.txt), <a href="https://github.com/TheEconomist/big-mac-data">github.com/TheEconomist/big-mac-data</a>.</p>
+      <p class="copylabel">A copy of the MSIN0167 course target chart, built as a class exercise with AI help. Target A is inspired by The Economist&rsquo;s Big Mac index and is not a chart by The Economist. Data: The Economist, Big Mac index, MIT licence, <a href="https://github.com/TheEconomist/big-mac-data">github.com/TheEconomist/big-mac-data</a>.</p>
+      <p class="credit">AI used: Claude (Claude Code) wrote the code with me; I checked the values against the data.</p>
+      <p style="margin-top:28px"><a class="back" href="city-temperature.html" style="margin:0">Next project: Is your city getting warmer?</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Ashvinaa Ramarau &middot; <a href="https://www.linkedin.com/in/ashvinaa-ramarau/">LinkedIn</a></p>
+    <p>Built with the help of generative AI; content and decisions are my own.</p>
+  </div>
+</footer>
+<script>
+  /* make the chart frame exactly as tall as the chart inside it */
+  (function(){
+    var f = document.querySelector('.chart-frame'); if (!f) return;
+    function fit(){ try { var h = f.contentDocument.body.scrollHeight; if (h > 300) f.style.height = (h + 4) + 'px'; } catch (e) {} }
+    f.addEventListener('load', function(){ fit(); try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) {} });
+  })();
+</script>
+</body>
+</html>
