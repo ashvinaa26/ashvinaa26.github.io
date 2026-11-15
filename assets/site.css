@@ -300,3 +300,12 @@ footer a{color:var(--muted)}
 .xp > li .logo.has-img{background:#fff}
 .xp .logo.has-img img{width:72%;height:72%}
 .xp .logo.has-img img[src*="prudential"]{width:90%;height:90%}
+
+/* ---------- smaller, circular photo ---------- */
+@media (min-width:901px){.intro .wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,.75fr)}}
+.portrait{max-width:320px;margin:0 auto}
+.portrait::before{inset:14px -14px -14px 14px;border-radius:50%;background:var(--butter-tint);border:2px solid var(--accent)}
+.portrait .frame{aspect-ratio:1/1;border-radius:50%;border:6px solid var(--surface);box-shadow:var(--shadow)}
+.portrait img{object-position:50% 22%}
+.portrait .badge{left:50%;bottom:-18px;transform:translateX(-50%);white-space:nowrap;text-align:center}
+@media (max-width:900px){.portrait{max-width:200px;margin:0 0 28px;order:-1}.portrait .badge{font-size:13px;padding:8px 12px}}

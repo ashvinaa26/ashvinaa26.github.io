@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FAFAF8">
+<title>Defending a graduate programme with evidence | Ashvinaa Ramarau</title>
+<meta name="description" content="A simulated business case and interactive dashboard for Halvora's Future Leaders graduate programme: cost, build vs buy, retention, manager calibration and DEI, built to answer a CFO's proposed 30% cut.">
+<link rel="canonical" href="https://ashvinaa26.github.io/projects/halvora-future-leaders.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Defending a graduate programme with evidence | Ashvinaa Ramarau">
+<meta property="og:description" content="A people-analytics business case for an early talent programme facing a 30% cut: what it costs, what it is worth, and what needs fixing.">
+<meta property="og:url" content="https://ashvinaa26.github.io/projects/halvora-future-leaders.html">
+<meta property="og:image" content="https://ashvinaa26.github.io/images/halvora-thumb.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="topbar" aria-label="Main menu">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Ashvinaa Ramarau</a>
+    <ul>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#people" aria-current="page">Projects</a></li>
+      <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <a class="back" href="../index.html#people">All projects</a>
+    <p class="eyebrow">People project &middot; Early talent &middot; People analytics</p>
+    <h1>Defending a graduate programme with evidence</h1>
+    <p class="lead">Halvora, a fictional global FMCG company, wants to cut its graduate programme intake by 30% as part of a group-wide efficiency drive. Playing the Early Talent &amp; Development Manager, I built the business case and an interactive dashboard to answer the Chief People Officer&rsquo;s four questions before the Q4 budget review.</p>
+    <ul class="meta">
+      <li><b>Role played</b>Early Talent &amp; Development Manager</li>
+      <li><b>Audience</b>CPO and Q4 Budget Review Board</li>
+      <li><b>Data</b>360 graduates, 6 cohorts, 210 external hires (simulated)</li>
+      <li><b>Tools</b>Chart.js, Notion, Claude</li>
+    </ul>
+    <p style="margin-top:1.5rem"><a class="btn btn-primary" href="halvora-dashboard.html">Open the dashboard <span class="arrow" aria-hidden="true">&rarr;</span></a> &nbsp; <a class="btn btn-ghost" href="halvora-case-brief.pdf">Read the full brief (PDF)</a></p>
+  </div>
+</header>
+
+<main id="main">
+  <section aria-labelledby="problem-h">
+    <div class="wrap prose">
+      <h2 id="problem-h">The problem</h2>
+      <p>The Group CFO&rsquo;s view was that graduate programmes are the easiest cut to make because their value is the hardest to prove. Finance assumed a 30% intake cut would save about &pound;354k a year. The programme had never been measured, so nobody could answer back.</p>
+      <p>The CPO asked four questions. Is the programme building future leaders, or just rotating people? Is it worth the cost compared with hiring experienced people? Are we managing attrition? Are we meeting our diversity commitments ahead of new disclosure rules?</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="approach-h">
+    <div class="wrap prose">
+      <h2 id="approach-h">My approach</h2>
+      <p><b>I mapped every chart to one of the CPO&rsquo;s questions</b>, so the dashboard answers what leadership actually asked rather than showing everything the data could show. It has twelve views, from an executive summary to retention, manager calibration, progression, mobility, DEI, build vs buy, and finance.</p>
+      <p><b>I broke the cost into its parts.</b> The programme sat in the budget as one line. Built up from eight components, it costs about &pound;19,700 per graduate, and around 23% of that is fixed. So a 30% cut saves roughly &pound;281k, not &pound;354k.</p>
+      <p><b>I compared the programme with the real alternative.</b> Cutting places doesn&rsquo;t remove the roles; they get filled by experienced hires instead. I compared graduates with 210 external hires modelled on published research (Bidwell, 2011), including the findings that work against the programme.</p>
+    </div>
+    <figure class="shot-figure wrap wide">
+      <img src="../images/halvora-thumb.jpg" width="960" height="600" alt="Executive summary of the Halvora dashboard: a recommendation to protect the programme, with headline figures for net return, retention, alumni leading teams and cost per graduate" loading="lazy">
+      <figcaption>The executive summary leads with the decision the board needs to make, then the evidence behind it.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="judgement-h">
+    <div class="wrap prose">
+      <h2 id="judgement-h">The judgement calls</h2>
+      <p><b>A range, not a single number.</b> The programme&rsquo;s value depends on how much more a graduate delivers than the alternative hire, which can&rsquo;t be measured directly. So I showed three scenarios. The harshest one is negative, and I put it first, because a sceptical CFO would build it anyway.</p>
+      <p><b>Testing findings before reporting them.</b> With about 60 graduates per cohort, a handful of leavers can look like a pattern. I re-ran each analysis across 40 simulated versions of the programme and reported how often it held. An early finding linking international rotations to retention looked significant once, held 0% of the time, and was withdrawn.</p>
+      <p><b>Reporting what doesn&rsquo;t flatter the case.</b> Graduates and external hires retain and get promoted at about the same rate, and external hires get up to speed faster. I said so. The case rests on cost and performance, not on claims that wouldn&rsquo;t survive challenge.</p>
+      <p><b>Separating harsh reviewers from weak performers.</b> Each graduate is rated by three managers. Comparing every rating with that graduate&rsquo;s own average shows how much comes down to who did the reviewing.</p>
+    </div>
+    <figure class="shot-figure wrap wide">
+      <img src="../images/halvora-calibration.jpg" width="1800" height="846" alt="Bar chart of rating bias for 24 managers, from about -0.4 (harsh) to +0.45 (lenient), with most bars coloured as significantly different from zero" loading="lazy">
+      <figcaption>Manager calibration: once each graduate&rsquo;s ability is controlled for, the real spread between managers is 0.84 points, not the 1.34 a raw comparison suggests.</figcaption>
+    </figure>
+  </section>
+
+  <section aria-labelledby="found-h">
+    <div class="wrap prose">
+      <h2 id="found-h">What the evidence showed</h2>
+      <ul>
+        <li><b>Buying the same work costs 25% more.</b> Graduates cost about &pound;47,100 per productive year against &pound;58,800 for external hires, and the gap repeats every year they stay.</li>
+        <li><b>The return builds over time.</b> Each cohort&rsquo;s return improves as it matures, with breakeven at around three years. Judging the programme on its newest intakes misreads it.</li>
+        <li><b>Placement fit is the biggest lever.</b> Graduates placed against their stated interest were retained at 68% against 82.5% for well-matched ones. This held in 98% of stability tests.</li>
+        <li><b>Sustainability/ESG graduates leave more often</b>, in the skill the company can least easily buy. This was real but less certain (it held in 68% of tests), so I recommended a review, not a big spend.</li>
+        <li><b>No promotion gap by gender, ethnic background or first-generation status.</b> I reported this as a null result, with the caveat that the sample can&rsquo;t detect gaps below about 10 points.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="rec-h">
+    <div class="wrap prose">
+      <h2 id="rec-h">The recommendation</h2>
+      <p>Reject the 30% cut, and fix what the data shows is underperforming: formalise how graduates are matched to rotations, review the ESG track, and calibrate the managers with the largest rating bias. To avoid simply refusing to contribute to the savings target, I offered savings of my own from inefficiencies, such as making a second international rotation the exception rather than the default.</p>
+      <div class="callout"><b>The one-line answer to the CFO:</b> the programme isn&rsquo;t a cost to be justified; it&rsquo;s the cheaper of two ways to fill the same roles.</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="took-h">
+    <div class="wrap prose">
+      <h2 id="took-h">What I took from it</h2>
+      <p>A people case gets heard when it&rsquo;s built the way Finance builds one: on cost drivers, alternatives and ranges, with the weak spots stated before someone else finds them. My finance background did as much work here as the HR content.</p>
+      <p><i>Halvora, its people and all figures are simulated for portfolio purposes. I used generative AI (Claude) to help build the dataset and dashboard; the framing, analysis choices and recommendation are my own.</i></p>
+
+      <nav class="next" aria-label="More projects"><a href="../index.html#people"><small>Back to</small>&larr; All projects</a><a href="ge-hr-simulation.html" style="text-align:right"><small>Next project</small>GE Aerospace HR job simulation &rarr;</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Ashvinaa Ramarau &middot; <a href="https://www.linkedin.com/in/ashvinaa-ramarau/">LinkedIn</a></p>
+    <p>Built with the help of generative AI; content and decisions are my own.</p>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
