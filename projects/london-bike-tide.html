@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FAFAF8">
+<title>London's commuter tide | Ashvinaa Ramarau</title>
+<meta name="description" content="An animated map of 787 Santander Cycles stations, hour by hour on an average weekday: bikes pour into the City every morning and flow back out every evening. Built in Python and Plotly by Ashvinaa Ramarau.">
+<link rel="canonical" href="https://ashvinaa26.github.io/projects/london-bike-tide.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="London's commuter tide | Ashvinaa Ramarau">
+<meta property="og:description" content="787 bike stations, hour by hour: where London's commuters take bikes from in the morning, where they leave them, and how the flow reverses in the evening.">
+<meta property="og:url" content="https://ashvinaa26.github.io/projects/london-bike-tide.html">
+<meta property="og:image" content="https://ashvinaa26.github.io/images/share-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="topbar" aria-label="Main menu">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Ashvinaa Ramarau</a>
+    <ul>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#people" aria-current="page">Projects</a></li>
+      <li><a class="nav-cta" href="../index.html#contact">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <a class="back" href="../index.html#work">All projects</a>
+    <p class="eyebrow">Case study &middot; Maps</p>
+    <h1>London&rsquo;s commuter tide</h1>
+    <p class="lead">Every weekday, bikes flow into the City of London in the morning and back out in the evening. This animated map shows all 787 Santander Cycles docking stations hour by hour, from 06:00 to 22:00, coloured by whether more bikes arrive or leave.</p>
+    <ul class="meta">
+      <li><b>Data</b>TfL cycle hire usage data, August 2023</li>
+      <li><b>Coverage</b>787 stations, 22 weekdays, 17 hours</li>
+      <li><b>Tools</b>Python, pandas, Plotly</li>
+      <li><b>Context</b>UCL Data Visualisation module</li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap chart-wrap">
+    <iframe class="chart-frame" style="height:800px;max-width:1100px" src="../charts/tide-map.html" title="Animated map of 787 London bike stations by hour on an average weekday, coloured by bikes arriving minus bikes leaving, with dot size showing trips that hour, a play button and an hour slider"></iframe>
+    <p class="chart-links"><a href="../charts/tide-map.html">Open the map full screen</a><a href="../images/tide-map.png">Static picture at 08:00 (PNG)</a></p>
+  </div>
+
+  <section aria-labelledby="notice-h">
+    <div class="wrap prose">
+      <h2 id="notice-h">What to notice</h2>
+      <p><b>Waterloo is where the morning commute starts.</b> At 08:00 about 70 bikes leave Waterloo Station 3 in the hour and only 2 arrive, the biggest outflow of any station. Commuters off the trains ride over the river, and the City and the West End turn purple: Queen Street 1 by Bank gains 33 bikes in the hour.</p>
+      <p><b>The tide turns in the evening.</b> At 17:00 the same Waterloo station gains 83 bikes in the hour, while stations around Bank and St Paul&rsquo;s empty out.</p>
+
+      <h2>How to use it</h2>
+      <ul>
+        <li>Press <b>&#9654;</b> to play the day, or drag the <b>slider</b> to one hour.</li>
+        <li><b>Purple</b> stations gain bikes (more arrive than leave); <b>orange</b> stations lose them. The colour stops at &plusmn;10, so the darkest dots may be far beyond it.</li>
+        <li><b>Hover</b> a dot to see the station&rsquo;s arrivals, departures and net change for that hour.</li>
+      </ul>
+
+      <h2>What I added: when is the network busiest?</h2>
+      <p>The map shows <i>where</i> bikes go, but it is hard to compare hours by eye. This line adds up every station&rsquo;s pick-ups and returns for each hour. The evening rush is bigger than the morning one: about 6,200 at 18:00 against about 5,400 at 08:00.</p>
+    </div>
+    <div class="wrap chart-wrap">
+      <iframe class="chart-frame" style="height:480px;max-width:1100px" src="../charts/bike-rush-hours.html" title="Line chart of bikes picked up plus returned across all London stations in each weekday hour, peaking at 08:00 and, higher, at 18:00"></iframe>
+      <p class="chart-links"><a href="../charts/bike-rush-hours.html">Open the chart full screen</a></p>
+    </div>
+    <div class="wrap prose">
+      <h2>How I checked it</h2>
+      <table class="checks">
+        <thead><tr><th>Check</th><th>In the data</th><th>On the chart</th></tr></thead>
+        <tbody>
+          <tr><td>Waterloo Station 3, 08:00</td><td>2.14 arrivals, 69.73 departures, net &minus;67.59</td><td>Hover: 2.1, 69.7, &minus;67.6; darkest orange</td></tr>
+          <tr><td>Waterloo Station 3, 17:00</td><td>86.05 arrivals, 2.77 departures, net +83.27</td><td>Hover: 86.1, 2.8, +83.3; darkest purple</td></tr>
+          <tr><td>All stations, 08:00 and 18:00</td><td>5,432 and 6,212 pick-ups plus returns</td><td>Same values on the line chart</td></tr>
+        </tbody>
+      </table>
+      <p class="credit">Values are averages over the 22 weekdays of August 2023 (weekends and the 28 August bank holiday excluded) and count customers&rsquo; trips only: TfL also moves bikes by van, which this data does not show. Station locations are today&rsquo;s, so a few may have moved slightly since 2023.</p>
+
+      <h2>Credits and licence</h2>
+      <p class="credit">Data: TfL cycle hire usage data (August 2023) and TfL BikePoint API station locations (downloaded 19 Nov 2026). Powered by TfL Open Data. Contains OS data &copy; Crown copyright and database rights 2016 and Geomni UK Map data &copy; and database rights 2019. <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/">Open Government Licence v2.0</a>. Map tiles &copy; OpenStreetMap contributors &copy; CARTO. Figure made by Ashvinaa Ramarau, adapted from the class example.</p>
+      <p class="copylabel">Based on a map set as an exercise in my UCL Data Visualisation module (MSIN0167). I rebuilt it with AI help and added the busiest-hours chart.</p>
+      <p class="credit">AI used: Claude (Claude Code) wrote the code with me; I checked the values against the data.</p>
+
+      <nav class="next" aria-label="More projects"><a href="network-of-thrones.html"><small>Previous project</small>&larr; Who matters in a network?</a><a href="../index.html#work" style="text-align:right"><small>Back to</small>All projects</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Ashvinaa Ramarau &middot; <a href="https://www.linkedin.com/in/ashvinaa-ramarau/">LinkedIn</a></p>
+    <p>Built with the help of generative AI; content and decisions are my own.</p>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
